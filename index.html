@@ -1,0 +1,391 @@
+<html>
+
+  <style>
+.record {
+  position: absolute;
+  cursor: move;
+  z-index: 9;
+  text-align: center;
+}
+
+.recordheader {
+  padding: 10px;
+  z-index: 10;
+  color: #fff;
+}
+
+#colel {
+  grid-column: 1;
+  align-items: flex-start;
+}
+
+.collapsible {
+  padding: 0px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.collapsible:hover {
+  filter: none; 
+}
+
+.content {
+  /*padding: 0 18px;*/
+  max-height: 0;
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #d3d3d3;
+}
+
+.colcontent{
+  position: relative;
+  width: 100%; height: 100%;
+}
+.backgroundcolcontent{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/9/91/The_Strokes_-_Comedown_Machine.jpg");
+  background-size: cover;
+}
+
+.active, .collapsible:hover > .colcontent > .backgroundcolcontent{
+  -webkit-filter: brightness(80%);
+  -moz-filter: brightness(80%);
+  -o-filter: brightness(80%);
+  -ms-filter: brightness(80%);
+  filter: brightness(80%);
+}
+.collabel{
+  /* This will make it stack on top of the ::before */
+  opacity: 0;
+  padding: 18px;
+  position: relative;
+  font-size: 16px;
+  color: white;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  -ms-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+}
+
+.active, .collapsible:hover > .colcontent > .collabel{
+  opacity: 1;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+}
+
+body {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-image: url("https://e0.pxfuel.com/wallpapers/552/366/desktop-wallpaper-wood-high-resolution-widescreen-wood-table-texture-wood-wood-texture-background-wooden-table.jpg");
+}
+
+    .play-record {
+      transform-box: fill-box;
+      transform-origin: center;
+      transform-style: preserve-3D;
+      animation:
+        spin 3s cubic-bezier(.52,.29,.83,.13),
+        spin 0.5s linear 3s infinite;
+    }
+
+    @keyframes spin {
+    0% { transform: translate(49.757308px, 34.251618px) rotate(0deg); }
+    100% { transform: translate(49.757308px, 34.251618px) rotate(360deg); }
+}
+
+#recordplayer {
+  grid-column: 2;
+}
+
+    #hand {
+      transition: transform 1s linear;
+      transform-style: preserve-3D;
+      transform-origin: 140px 72px;
+    }
+
+    .hand-rotate {
+      transform: rotate(40deg);
+    }
+
+    #red {
+      position: absolute;
+      background-color: red;
+      width: 50px;
+      height: 50px;
+      top: 50px;
+      left: 50px;
+    }
+
+  </style>
+
+<body>
+<div id="colel">
+    </div>
+    <div id="recordplayer">
+<svg
+   id="recordplayersvg"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width=1200
+   height=1000
+   viewBox="10 10 150 150"
+   enable-background="new 0 0 100 100"
+   xml:space="preserve"
+   id="svg150"
+   sodipodi:docname="record_player.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs154" /><sodipodi:namedview
+     id="namedview152"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     showgrid="false" />
+     <rect
+     style="fill:#89cff0;fill-opacity:1;stroke-width:3.77953;stroke-linecap:round"
+     id="rect1063"
+     width="147.12187"
+     height="100.79001"
+     x="19.071106"
+     y="28.139816"
+     ry="7.1559691" />
+     
+
+     <path
+     d="m 119.92204,122.64082 4.653,-11.235 1.605,0.666 10.217,-24.663999 v -10.872 c -1.985,-0.499 -3.453,-2.294 -3.453,-4.433 0,-2.138 1.468,-3.934 3.453,-4.433 v -5.114 h -4.063 v -14.62 h 10.36 v 14.62 h -4.062 v 5.114 c 1.983,0.499 3.453,2.295 3.453,4.433 0,2.139 -1.469,3.935 -3.453,4.433 l -0.011,11.312 -10.375,25.078999 3.908,1.617 -0.371,0.894 3.297,1.367 -0.393,0.95 -3.297,-1.366 -3.89,9.391 z"
+     id="hand"
+     style="fill:#28170b" />
+     <circle
+     cx="-92.632042"
+     cy="78.534821"
+     r="2.4260001"
+     id="circle996"
+     transform="scale(-1,1)" />
+</svg>
+    </div>
+  </body>
+  <script>
+    
+    var vinyls = [
+      {
+        title: "Comedown Machine - The Strokes",
+        name: "comedown-machine",
+        image: "https://upload.wikimedia.org/wikipedia/en/9/91/The_Strokes_-_Comedown_Machine.jpg",
+        imageoffset: null,
+        color: "#e9afaf",
+          },
+      {
+        title: "Sports - Modern Baseball",
+        name: "sports",
+        image: "https://upload.wikimedia.org/wikipedia/en/9/9c/Sports_Modern_Baseball_album.jpg",
+        imageoffset: null,
+        color: "#e0ab3f",
+          },
+      {
+        title: "Melodrama - Lorde",
+        name: "melodrama",
+        image: "https://upload.wikimedia.org/wikipedia/en/b/b2/Lorde_-_Melodrama.png",
+        imageoffset: null,
+        color: "#020079",
+          },
+      {
+        title: "Disintegration - The Cure",
+        name: "disintegration",
+        image: "https://upload.wikimedia.org/wikipedia/en/b/b8/CureDisintegration.jpg",
+        imageoffset: null,
+        color: "#828a89",
+          },
+      {
+        title: "Juju - Siouxsie and the Banshees",
+        name: "juju",
+        image: "https://upload.wikimedia.org/wikipedia/en/a/ae/Siouxsie_%26_the_Banshees-Juju.jpg",
+        imageoffset: null,
+        color: "#75816b",
+          },
+      {
+        title: "Magdalene - FKA Twigs",
+        name: "magdalene",
+        image: "https://upload.wikimedia.org/wikipedia/en/9/91/FKATwigs_Magdalene.png",
+        imageoffset: null,//"0px -170px",
+        color: "#bca48a",
+          },
+    ]
+
+    var vinylElements = vinyls.map(generateVinylElements); 
+    console.log(vinylElements);
+    vinylElements.map((v) => {
+      document.getElementById("colel").appendChild(v);
+        });
+    
+    function generateVinylElements (vinyl) {
+      return elementFromHtml(
+            `<div><button class="collapsible">
+<div class="colcontent">
+   <div class="backgroundcolcontent" style="background-image: url(&quot;${vinyl.image}&quot;); background-position: ${vinyl.imageoffset ?? top}">
+  </div>
+  <div class="collabel">
+   ${vinyl.title}
+  </div>
+</div>
+      </button>
+    <div class="content">
+   <div id="${vinyl.name}" class="recordholder">
+        <svg id="${vinyl.name}svg" width=1000 height=600 viewbox="0 30 150 30">
+     <g
+     id="${vinyl.name}g1001"
+     transform="translate(0,0)"> 
+     <path
+   id="${vinyl.name}path425"
+            style="fill:${vinyl.color}"
+       d="m 42.875,8.4726562 c -19.77898,1e-7 -35.8135,16.0315668 -35.8125,35.8105468 0,19.77898 16.03352,35.814453 35.8125,35.814453 19.77798,0 35.8125,-16.035473 35.8125,-35.814453 0,-19.77798 -16.03452,-35.8105468 -35.8125,-35.8105468 z M 42.873,41.857422 A 2.4260001,2.4260001 0 0 1 45.300734,44.283203 2.4260001,2.4260001 0 0 1 42.873,46.710938 2.4260001,2.4260001 0 0 1 40.447219,44.283203 2.4260001,2.4260001 0 0 1 42.873,41.857422 Z" />
+     <path
+       d="m 42.875,8.472 c 19.778,0 35.812,16.034 35.812,35.812 0,19.779 -16.034,35.813 -35.812,35.813 C 23.096,80.097 7.063,64.063 7.063,44.284 7.062,24.505 23.096,8.472 42.875,8.472 Z m 0,48.378 c 6.938,0 12.564,-5.627 12.564,-12.566 0,-6.939 -5.626,-12.565 -12.564,-12.565 -6.94,0 -12.565,5.625 -12.565,12.565 0,6.939 5.625,12.566 12.565,12.566 z"
+   id="${vinyl.name}path144" />
+   <text style="font: 3px sans-serif; "><textPath href="#${vinyl.name}path144" side="left" startOffset="80%">${vinyl.title}</textPath></text>
+     </g>
+        </svg>
+      </div>
+   </div></div>`
+            );
+    }
+
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
+
+    function elementFromHtml(html) {
+      const template = document.createElement("template");
+      template.innerHTML = html.trim();
+      return template.content.firstElementChild;
+    }
+
+
+    var coll = document.getElementsByClassName("collapsible");
+    var contents = document.getElementsByClassName("content");
+    var records = document.getElementsByClassName("recordholder");
+
+    for (var i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", makeExpandFunction(i));
+    }
+
+    function makeExpandFunction (i) {
+      return function() {
+        coll[i].classList.toggle("active");
+        records[i].classList.remove("record");
+        records[i].style.top = null;
+        records[i].style.left = null;
+
+        var content = contents[i]
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.height = content.scrollHeight + "px";
+        } 
+      }
+    }
+
+    //Make the DIV element draggable:
+    for (record of document.getElementsByClassName("recordholder")) {
+      dragElement(record);
+    }
+
+    function dragElement(element) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      element.onmousedown = dragMouseDown;
+
+      function dragMouseDown(e) {
+        element.classList.add("record");
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+
+        // if close enough to nub, snap to record player and play animation
+        var actualsvg = document.getElementById(`${element.id}g1001`);
+        var rect1 = actualsvg.getBoundingClientRect();
+        var rect2 = document.getElementById("circle996").getBoundingClientRect();
+
+        if (
+          rect1.left < rect2.left &&
+          rect1.left + rect1.width > rect2.left &&
+          rect1.top < rect2.top &&
+          rect1.top + rect1.height > rect2.top
+            ) {
+          element.classList.remove("record");
+          element.classList.remove("recordholder");
+          var recordplayersvg = document.getElementById(`recordplayersvg`);
+          var hand = document.getElementById("hand");
+          recordplayersvg.insertBefore(actualsvg, hand);
+          actualsvg.setAttribute("transform", "translate(49.757308, 34.251618)")
+
+          // animate record hand
+          // recordplayersvg.appendChild(hand);
+          hand.classList.add("hand-rotate");
+          setTimeout(() => {
+          actualsvg.classList.add("play-record");
+                  }, 1000 )
+
+          setTimeout(() => {
+                window.location.href = `./pages/${element.id}.html`;
+                  }, 6000 )
+          /*
+          for (const child of actualsvg.children) {
+            child.classList.add("play-record");
+          }
+              */
+        }
+      }
+    }
+  </script>
+</html>
