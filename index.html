@@ -51,11 +51,38 @@
   width: 100%; height: 100%;
 }
 .backgroundcolcontent{
+  z-index: 2;
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-image: url("https://upload.wikimedia.org/wikipedia/en/9/91/The_Strokes_-_Comedown_Machine.jpg");
+  background-size: cover;
+}
+
+.colrecord{
+  opacity: 0;
+  z-index: 0;
+  content: "";
+  position: absolute;
+  width: 100%; height: 100%;
+  transition: transform 0.4s linear, opacity 0.01s linear;
+  transform-style: preserve-3D;
+  transform: translateX(0px);
+}
+
+.shift {
+  opacity: 1;
+  transform: translateX(250px);
+}
+
+.expander{
+  z-index: 1;
+  content: "";
+  top: 0; left: 0;
+  width: 100%; 
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
   background-size: cover;
 }
 
@@ -68,6 +95,7 @@
 }
 .collabel{
   /* This will make it stack on top of the ::before */
+  z-index: 5;
   opacity: 0;
   padding: 18px;
   position: relative;
@@ -230,6 +258,13 @@ body {
         imageoffset: null,//"0px -170px",
         color: "#bca48a",
           },
+      {
+        title: "bury me at makeout creek - Mitski",
+        name: "bury-me-at-makeout-creek",
+        image: "https://upload.wikimedia.org/wikipedia/en/9/95/Bury_Me_At_Makeout_Creek.jpg",
+        imageoffset: null,//"0px -170px",
+        color: "#ffffff",
+          },
     ]
 
     var vinylElements = vinyls.map(generateVinylElements); 
@@ -240,16 +275,12 @@ body {
     
     function generateVinylElements (vinyl) {
       return elementFromHtml(
-            `<div><button class="collapsible">
-<div class="colcontent">
-   <div class="backgroundcolcontent" style="background-image: url(&quot;${vinyl.image}&quot;); background-position: ${vinyl.imageoffset ?? top}">
+            `<div><button class="collapsible click">
+<div class="colcontent click">
+   <div class="backgroundcolcontent click" style="background-image: url(&quot;${vinyl.image}&quot;); background-position: ${vinyl.imageoffset ?? top}">
   </div>
-  <div class="collabel">
-   ${vinyl.title}
-  </div>
-</div>
-      </button>
-    <div class="content">
+  <div class="colrecord">
+
    <div id="${vinyl.name}" class="recordholder">
         <svg id="${vinyl.name}svg" width=1000 height=600 viewbox="0 30 150 30">
      <g
@@ -266,7 +297,17 @@ body {
      </g>
         </svg>
       </div>
-   </div></div>`
+  </div>
+  <div class="collabel click">
+   ${vinyl.title}
+  </div>
+            <div class="expander click" style="background-image: url(&quot;${vinyl.image}&quot;);"></div>
+</div>
+      </button>
+    <div class="content">
+   </div>
+
+            </div>`
             );
     }
 
@@ -288,6 +329,9 @@ window.addEventListener( "pageshow", function ( event ) {
 
 
     var coll = document.getElementsByClassName("collapsible");
+    var colrecords = document.getElementsByClassName("colrecord");
+    var collabels = document.getElementsByClassName("collabel");
+    var expanders = document.getElementsByClassName("expander");
     var contents = document.getElementsByClassName("content");
     var records = document.getElementsByClassName("recordholder");
 
@@ -296,19 +340,32 @@ window.addEventListener( "pageshow", function ( event ) {
     }
 
     function makeExpandFunction (i) {
-      return function() {
-        coll[i].classList.toggle("active");
+      return function(e) {
+         if (e.target.classList.contains("click")) {
+        //coll[i].classList.toggle("active");
         records[i].classList.remove("record");
         records[i].style.top = null;
         records[i].style.left = null;
 
-        var content = contents[i]
+        records[i].classList.toggle("active");
+
+        var content = expanders[i]
+        var collabel = collabels[i]
         if (content.style.maxHeight){
+
           content.style.maxHeight = null;
+          //colrecords[i].classList.toggle("hidden");
+          colrecords[i].classList.toggle("shift");
         } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.style.height = content.scrollHeight + "px";
+        /* setTimeout(() => {
+               colrecords[i].classList.toggle("hidden");
+             }, 200);
+              */
+        colrecords[i].classList.toggle("shift");
+          content.style.maxHeight = content.offsetWidth - collabel.offsetHeight + "px";
+          content.style.height = content.offsetWidth - collabel.offsetHeight + "px";
         } 
+      }
       }
     }
 
