@@ -1,0 +1,128 @@
+[
+      {
+        "title": "Comedown Machine - The Strokes",
+        "name": "comedown-machine",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/91/The_Strokes_-_Comedown_Machine.jpg",
+        "imageoffset": null,
+        "color": "#e9afaf"
+          },
+      {
+        "title": "Sports - Modern Baseball",
+        "name": "sports",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9c/Sports_Modern_Baseball_album.jpg",
+        "imageoffset": null,
+        "color": "#e0ab3f"
+          },
+      {
+        "title": "Melodrama - Lorde",
+        "name": "melodrama",
+        "image": "https://upload.wikimedia.org/wikipedia/en/b/b2/Lorde_-_Melodrama.png",
+        "imageoffset": null,
+        "color": "#020079"
+          },
+      {
+        "title": "Disintegration - The Cure",
+        "name": "disintegration",
+        "image": "https://upload.wikimedia.org/wikipedia/en/b/b8/CureDisintegration.jpg",
+        "imageoffset": null,
+        "color": "#828a89"
+          },
+      {
+        "title": "Juju - Siouxsie and the Banshees",
+        "name": "juju",
+        "image": "https://upload.wikimedia.org/wikipedia/en/a/ae/Siouxsie_%26_the_Banshees-Juju.jpg",
+        "imageoffset": null,
+        "color": "#75816b"
+          },
+      {
+        "title": "Magdalene - FKA Twigs",
+        "name": "magdalene",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/91/FKATwigs_Magdalene.png",
+        "imageoffset": null,
+        "color": "#bca48a"
+          },
+      {
+        "title": "bury me at makeout creek - Mitski",
+        "name": "bury-me-at-makeout-creek",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/95/Bury_Me_At_Makeout_Creek.jpg",
+        "imageoffset": null,
+        "color": "#ffffff"
+          },
+      {
+        "title": "Ceres & Calypso Through the Deep Time - Candy Claws",
+        "name": "ceres-and-calypso",
+        "image": "https://upload.wikimedia.org/wikipedia/en/f/f8/Candy_Claws_-_Ceres_%26_Calypso_in_the_Deep_Time.jpeg",
+        "imageoffset": null,
+        "color": "#b7d889"
+          },
+      {
+        "title": "Bloom - Beach House",
+        "name": "bloom",
+        "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/Beach_House_-_Bloom.png",
+        "imageoffset": null,
+        "color": "#c0c0c0"
+          },
+      {
+        "title": "Pinkerton - Weezer",
+        "name": "pinkerton",
+        "image": "https://upload.wikimedia.org/wikipedia/en/c/ca/Pinkerton_cover.jpg",
+        "imageoffset": null,
+        "color": "#e0caa1"
+          },
+      {
+        "title": "loveless - my bloody valentine",
+        "name": "loveless",
+        "image": "https://upload.wikimedia.org/wikipedia/en/4/4b/My_Bloody_Valentine_-_Loveless.png",
+        "imageoffset": null,
+        "color": "#d73d7b"
+          },
+      {
+        "title": "Peaceful as Hell - Black Dresses",
+        "name": "peaceful-as-hell",
+        "image": "https://upload.wikimedia.org/wikipedia/en/2/23/Black_Dresses_-_Peaceful_as_Hell.png",
+        "imageoffset": null,
+        "color": "#3b90fc"
+          },
+      {
+        "title": "1000 gecs - 100 gecs",
+        "name": "1000-gecs",
+        "image": "https://upload.wikimedia.org/wikipedia/en/f/f3/1000_gec_album.jpg",
+        "imageoffset": null,
+        "color": "#454321"
+          },
+      {
+        "title": "Funeral - Arcade Fire",
+        "name": "funeral",
+        "image": "https://upload.wikimedia.org/wikipedia/en/2/25/ArcadeFireFuneralCover.jpg",
+        "imageoffset": null,
+        "color": "#e6be8a"
+          },
+      {
+        "title": "MELTING MOMENT - POiSON GiRL FRiEND",
+        "name": "melting-moment",
+        "image": "https://www.jvcmusic.co.jp/img/jackets/VEATP-38272.jpg",
+        "imageoffset": null,
+        "color": "#d9e7e7"
+          },
+      {
+        "title": "Arkhaiomelisidonophunikheratos - Satanicpornocultshop",
+        "name": "arkhaiomelisidonophunikheratos",
+        "image": "https://static.fnac-static.com/multimedia/Images/FR/NR/6a/da/bf/12573290/1540-1/tsp20201120121324/Arkhaiomelisidonophunikheratos.jpg",
+        "imageoffset": null,
+        "color": "#dadadc"
+          },
+      {
+        "title": "Unknown Pleasures - Joy Division",
+        "name": "unknown-pleasures",
+        "image": "https://t2.genius.com/unsafe/891x0/https%3A%2F%2Fimages.genius.com%2F7f3937bd3ecb4d9807571d3472f5792c.564x564x1.png",
+        "imageoffset": null,
+        "color": "#ffffff"
+          },
+      {
+        "title": "The Number of the Beast - Iron Maiden",
+        "name": "number-of-the-beast",
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/32/IronMaiden_NumberOfBeast.jpg",
+        "imageoffset": null,
+        "color": "#c4d0c6"
+          }
+    ]
